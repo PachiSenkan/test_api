@@ -1,12 +1,11 @@
 import csv
 from io import StringIO
 from collections import defaultdict
-from fastapi import Depends, FastAPI, UploadFile, File, HTTPException
+from fastapi import Depends, FastAPI, UploadFile, HTTPException
 from sqlalchemy.orm import Session
 
-from app.api import crud, models, schemas, dependencies, utils
+from app.api import crud, models, schemas, dependencies
 from app.core.db import engine
-from typing import Annotated
 
 models.Base.metadata.create_all(bind=engine)
 
